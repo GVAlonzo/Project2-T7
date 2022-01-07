@@ -61,6 +61,8 @@ def home():
         f"/api/v1.0/countbycities<br/>"
         f"<br>\/ Return JSON list of COUNT BY STATES \/<br/>"
         f"/api/v1.0/countbystates<br/>"
+        f"<br>\/ Return JSON list of AVG CHECK AND MEALS SERVED BY STATES \/<br/>"
+        f"/api/v1.0/checkmealsbystates<br/>"        
     )
     
     # Return template and data
@@ -203,6 +205,26 @@ def countbystates():
     return jsonify(response)    
 
     print("COUNTBYSTATES ROUTE")
+
+
+
+
+@app.route("/api/v1.0/checkmealsbystates")
+# https://docs.mongodb.com/manual/reference/sql-comparison/
+# https://docs.mongodb.com/manual/reference/sql-aggregation-comparison/
+# https://docs.mongodb.com/manual/reference/operator/aggregation/sum/
+def checkmealsbystates():
+
+    results = collection.aggregate([{ '$group': {'_id': '$State', 'avg': {'$avg' : '$Average Check'}, 'tot_sales': {'$sum' : '$Sales'},'tot_meals': {'$sum' : '$Meals Served'}}}])
+    
+    response = []
+    for result in results:
+        result['state'] = str(result['_id'])
+        del result['_id']
+        response.append(result)
+    return jsonify(response)    
+
+    print("COUNTBYSTATES ROUTE")    
 
 
 if __name__ == "__main__":
