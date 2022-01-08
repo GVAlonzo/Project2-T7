@@ -2,7 +2,7 @@
 Repository for Project 2 - Team 7
 
 
-## PREREQUITITES ##
+## PREREQUISITES ##
 
 **INSTALLING THE FLASK-CORS PACKAGE:**
 In GitBash, type `$ pip install -U flask-cors`
