@@ -67,8 +67,18 @@ def home():
         f"/api/v1.0/checkmealsbystates<br/>"        
     )
     
-    # Return template and data
-    return render_template("index.html")
+@app.route("/index.html")
+def index_render():
+        return render_template("index.html")
+
+@app.route("/bubble.html")
+def bubble_chart():
+        return render_template("bubble.html")
+
+@app.route("/cluster.html")
+def cluster_chart():
+        return render_template("cluster.html")
+
 
 
 @app.route("/api/v1.0/alldata")

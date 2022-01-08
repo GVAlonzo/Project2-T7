@@ -15,7 +15,7 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(myMap);
 
 // Store API query variable
-var apiURL = "http://127.0.0.1:5000/api/v1.0/alldata"
+var apiURL = "/api/v1.0/alldata"
 
 // Grab the data with d3
 d3.json(apiURL).then(function(response) {
