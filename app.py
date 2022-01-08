@@ -45,7 +45,11 @@ def home():
 
     # Call function to import CSV into MongoDB
     mongoimport()
+    return render_template("/index.html")
 
+
+@app.route("/others")
+def others():
     """List all available api routes."""
     return (
         f"Available Routes:<br/>"
@@ -67,10 +71,11 @@ def home():
         f"/api/v1.0/checkmealsbystates<br/>"        
     )
     
-@app.route("/index.html")
-def index_render():
-        return render_template("index.html")
+# @app.route("/index.html")
+# def index_render():
+#         return render_template("index.html")
 
+# \/ THESE ARE TEST ROUTES FOR RENDERING VISUALIZATIONS
 @app.route("/bubble.html")
 def bubble_chart():
         return render_template("bubble.html")
