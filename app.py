@@ -1,4 +1,5 @@
 from flask import Flask, render_template, redirect, jsonify
+from flask_cors import CORS
 from flask_pymongo import pymongo
 # from pymongo import MongoClient
 # import scrape_mars
@@ -36,6 +37,7 @@ def mongoimport():
     print("ENDING DB INSERT")
     
 
+CORS(app)
 
 # Route to render index.html template using data from Mongo
 @app.route("/")
