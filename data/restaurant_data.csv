@@ -1,4 +1,4 @@
-Rank,Restaurant,Sales,average_check,City,State,meals_served,city,lat,lng
+Rank,Restaurant,Sales,Average_Check,City,State,Meals_Served,city,Lat,Lng
 1,Carmine's (Times Square),39080335.0,40,New York,N.Y.,469803.0,New York,40.6943,-73.9249
 2,The Boathouse Orlando,35218364.0,43,Orlando ,Fla.,820819.0,Orlando ,28.4772,-81.3789
 3,Old Ebbitt Grill,29104017.0,33,Washington,D.C.,892830.0,Washington,38.9047,-77.0163
