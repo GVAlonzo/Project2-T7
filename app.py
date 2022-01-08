@@ -79,6 +79,7 @@ def alldata():
     response = []
     for result in results:
         result['_id'] = str(result['_id'])
+        del result['_id']
         response.append(result)
     return jsonify(response)
 
@@ -94,6 +95,7 @@ def topten():
     response = []
     for result in results:
         result['_id'] = str(result['_id'])
+        del result['_id']
         response.append(result)
     return jsonify(response)
 
@@ -121,11 +123,11 @@ def topten():
 
 
 def distinctcities():
-    results = collection.aggregate([{ '$group': {'_id': '$City', 'lat': {'$first':'$lat'},'lng': {'$first':'$lng'}}}])
+    results = collection.aggregate([{ '$group': {'_id': '$City', 'Lat': {'$first':'$Lat'},'Lng': {'$first':'$Lng'}}}])
     
     response = []
     for result in results:
-        result['city'] = str(result['_id'])
+        result['City'] = str(result['_id'])
         del result['_id']
         response.append(result)
     return jsonify(response)
@@ -140,11 +142,11 @@ def distinctcities():
 # https://docs.mongodb.com/manual/reference/sql-aggregation-comparison/
 # https://docs.mongodb.com/manual/reference/operator/aggregation/sum/
 def salesandcities():
-    results = collection.aggregate([{ '$group': {'_id': '$City', 'tot_sales': {'$sum' : '$Sales'}, 'lat': {'$first':'$lat'},'lng': {'$first':'$lng'}}}])
+    results = collection.aggregate([{ '$group': {'_id': '$City', 'Tot_Sales': {'$sum' : '$Sales'}, 'Lat': {'$first':'$Lat'},'Lng': {'$first':'$Lng'}}}])
     
     response = []
     for result in results:
-        result['city'] = str(result['_id'])
+        result['City'] = str(result['_id'])
         del result['_id']
         response.append(result)
     return jsonify(response)
@@ -160,11 +162,11 @@ def salesandcities():
 # https://docs.mongodb.com/manual/reference/operator/aggregation/sum/
 def salesandstates():
 
-    results = collection.aggregate([{ '$group': {'_id': '$State', 'tot_sales': {'$sum' : '$Sales'}, 'lat': {'$first':'$lat'},'lng': {'$first':'$lng'}}}])
+    results = collection.aggregate([{ '$group': {'_id': '$State', 'Tot_Sales': {'$sum' : '$Sales'}, 'Lat': {'$first':'$Lat'},'Lng': {'$first':'$Lng'}}}])
     
     response = []
     for result in results:
-        result['state'] = str(result['_id'])
+        result['State'] = str(result['_id'])
         del result['_id']
         response.append(result)
     return jsonify(response)    
@@ -177,11 +179,11 @@ def salesandstates():
 # https://docs.mongodb.com/manual/reference/sql-aggregation-comparison/
 # https://docs.mongodb.com/manual/reference/operator/aggregation/sum/
 def countbycities():
-    results = collection.aggregate([{ '$group': {'_id': '$City', 'count': {'$sum' : 1}, 'lat': {'$first':'$lat'},'lng': {'$first':'$lng'}}}])
+    results = collection.aggregate([{ '$group': {'_id': '$City', 'Count': {'$sum' : 1}, 'Lat': {'$first':'$Lat'},'Lng': {'$first':'$Lng'}}}])
     
     response = []
     for result in results:
-        result['city'] = str(result['_id'])
+        result['City'] = str(result['_id'])
         del result['_id']
         response.append(result)
     return jsonify(response)
@@ -197,11 +199,11 @@ def countbycities():
 # https://docs.mongodb.com/manual/reference/operator/aggregation/sum/
 def countbystates():
 
-    results = collection.aggregate([{ '$group': {'_id': '$State', 'count': {'$sum' : 1}, 'lat': {'$first':'$lat'},'lng': {'$first':'$lng'}}}])
+    results = collection.aggregate([{ '$group': {'_id': '$State', 'count': {'$sum' : 1}, 'Lat': {'$first':'$Lat'},'Lng': {'$first':'$Lng'}}}])
     
     response = []
     for result in results:
-        result['state'] = str(result['_id'])
+        result['State'] = str(result['_id'])
         del result['_id']
         response.append(result)
     return jsonify(response)    
@@ -217,11 +219,11 @@ def countbystates():
 # https://docs.mongodb.com/manual/reference/operator/aggregation/sum/
 def checkmealsbystates():
 
-    results = collection.aggregate([{ '$group': {'_id': '$State', 'avg': {'$avg' : '$Average Check'}, 'tot_sales': {'$sum' : '$Sales'},'tot_meals': {'$sum' : '$Meals Served'}}}])
+    results = collection.aggregate([{ '$group': {'_id': '$State', 'Avg': {'$avg' : '$Average_Check'}, 'Tot_Sales': {'$sum' : '$Sales'},'Tot_Meals': {'$sum' : '$Meals_Served'}}}])
     
     response = []
     for result in results:
-        result['state'] = str(result['_id'])
+        result['State'] = str(result['_id'])
         del result['_id']
         response.append(result)
     return jsonify(response)    
