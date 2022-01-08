@@ -1,4 +1,4 @@
-Rank,Restaurant,Sales,Average Check,City,State,Meals Served,city,lat,lng
+Rank,Restaurant,Sales,average_check,City,State,meals_served,city,lat,lng
 1,Carmine's (Times Square),39080335.0,40,New York,N.Y.,469803.0,New York,40.6943,-73.9249
 2,The Boathouse Orlando,35218364.0,43,Orlando ,Fla.,820819.0,Orlando ,28.4772,-81.3789
 3,Old Ebbitt Grill,29104017.0,33,Washington,D.C.,892830.0,Washington,38.9047,-77.0163
@@ -34,7 +34,7 @@ Rank,Restaurant,Sales,Average Check,City,State,Meals Served,city,lat,lng
 33,Shooters Waterfront,18601433.0,57,Ft. Lauderdale,Fla.,409752.0,Ft. Lauderdale,26.1412,-80.1373
 34,Bottega Louie,18521000.0,36,Los Angeles,Calif.,322562.0,Los Angeles,34.1139,-118.4068
 35,Le Diplomate,18490719.0,38,Washington,D.C.,363609.0,Washington,38.9047,-77.0163
-36,Gibsons Bar & Steakhouse,18483056.0,79,Rosemont,Ill.,252419.0,Rosemont,38.5477,-121.3553
+36,Gibsons Bar & Steakhouse,18483056.0,79,Rosemont,Ill.,252419.0,Rosemont,41.9868,87.8722
 37,Lavo Italian Restaurant & Lounge,18386262.0,97,Las Vegas,Nev.,115500.0,Las Vegas,36.2333,-115.2654
 38,Prime Steakhouse,18248030.0,173,Las Vegas,Nev.,113600.0,Las Vegas,36.2333,-115.2654
 39,Makoto,18216906.0,54,Bal Harbour,Fla.,256830.0,Bal Harbour,25.8918,-80.1270
