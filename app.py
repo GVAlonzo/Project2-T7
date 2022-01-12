@@ -84,6 +84,14 @@ def bubble_chart():
 def cluster_chart():
         return render_template("cluster.html")
 
+@app.route("/plotlybar.html")
+def plotlybar_chart():
+        return render_template("plotlybar.html")
+
+@app.route("/data.html")
+def data_dump():
+        return render_template("data.html")
+
 
 
 @app.route("/api/v1.0/alldata")
