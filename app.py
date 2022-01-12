@@ -33,8 +33,9 @@ def mongoimport():
     data_to_load = json.loads(data.to_json(orient='records'))
     collection.remove()
     collection.insert(data_to_load)
-    return collection.count()  
     print("ENDING DB INSERT")
+    return collection.count()  
+    
     
 
 CORS(app)
