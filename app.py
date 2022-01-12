@@ -75,24 +75,22 @@ def others():
 # def index_render():
 #         return render_template("index.html")
 
-# \/ THESE ARE TEST ROUTES FOR RENDERING VISUALIZATIONS
-@app.route("/bubble.html")
-def bubble_chart():
-        return render_template("bubble.html")
-
-@app.route("/cluster.html")
+# \/ THESE ARE ROUTES FOR RENDERING VISUALIZATIONS ONTO NEW TABS
+@app.route("/cluster")
 def cluster_chart():
         return render_template("cluster.html")
 
-@app.route("/plotlybar.html")
-def plotlybar_chart():
-        return render_template("plotlybar.html")
-
-@app.route("/data.html")
+@app.route("/data")
 def data_dump():
         return render_template("data.html")
 
+# @app.route("/bubble.html")
+# def bubble_chart():
+#         return render_template("bubble.html")
 
+# @app.route("/plotlybar.html")
+# def plotlybar_chart():
+#         return render_template("plotlybar.html")
 
 @app.route("/api/v1.0/alldata")
 # https://docs.mongodb.com/manual/reference/sql-comparison/
