@@ -157,7 +157,7 @@ while (outColor.length < my_data.length) {
             title: {
               color: 'red',
               display: true,
-              text: 'Annual Meals Served'
+              text: 'Number of Meals Served in 2020'
             // },
         //     ticks: {
         //         callback: function(value){
@@ -180,7 +180,7 @@ while (outColor.length < my_data.length) {
             title: {
               color: 'red',
               display: true,
-              text: 'Annual Profit Sales'
+              text: 'Annual sales in U.S Dollars'
             }//,
             // ticks: {
             //     callback: function(value){

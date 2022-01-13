@@ -45,30 +45,34 @@ function drawBarChart(){
         var traceAvg = {
             x: xState,
             y: yAvg,
-            name: 'Average Meal Price',
+            name: 'Average Meal Price($)',
+            hovertemplate: 'AVERAGE MEAL PRICE: %{y:$.2f}<extra></extra>',
             type: 'bar'
         };
 
         var traceMeals = {
             x: xState,
             y: yMeals,
-            name: 'Meals Served',
-            type: 'bar'
+            name: 'Total Meals Served',
+            hovertemplate: 'MEALS SERVED: %{y:,0f}<extra></extra>',
+            type: 'bar',
+            visible: 'legendonly'
         };
 
         var traceSales = {
             x: xState,
             y: ySales,
-            title: 'test',
-            name: 'Total Sales',
-            type: 'bar'
+            name: 'Total Sales($)',
+            hovertemplate: 'TOTAL SALES: %{y:$,2f}<extra></extra>',
+            type: 'bar',
+            visible: 'legendonly'
         };
 
         var barData = [traceAvg, traceMeals, traceSales]
 
         var barLayout = {
             title: {
-              text:'State By State Comparison<br>(Click on Legend to Add/Remove Categories)',
+              text:'STATE BY STATE COMPARISON<br>(Click on Legend to Add/Remove Categories)',
               font: {
                 size: 20
               },
@@ -83,7 +87,7 @@ function drawBarChart(){
             },
             yaxis: {
               title: {
-                text: 'AVG MEAL PRICE / TOT MEALS SERVED<br>TOT SALES',
+                text: 'AVG MEAL PRICE / TOTAL MEALS SERVED/<br>TOTAL SALES',
                 font: {
                   size: 14
                 }
@@ -91,8 +95,6 @@ function drawBarChart(){
             }
           };
 
-
-      
         Plotly.newPlot('bar', barData, barLayout)     
     });
 
