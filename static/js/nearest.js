@@ -51,34 +51,44 @@ function runEnter() {
     // Grab the data with d3
     d3.json(apiURL).then(function(response) {
 
+        var tableDict = {}
+
     // Loop through data
-    for (var i = 0; i < response.length; i++) {
-  
-      // Set the data location property to a variable
-      var restaurant = response[i];
-     
-      // Check for restaurant property
-        if (restaurant) {
+        for (var i = 0; i < response.length; i++) {
+    
+        // Set the data location property to a variable
+        var restaurant = response[i];
+        
+        // Check for restaurant property
+            if (restaurant) {
 
-            var tableDict = {}
+                // Latitude +/- .5 = ~69 miles, Longitude +/- .5 = ~55 miles
+                if ((restaurant.Lat > (curLat - .5) && restaurant.Lat < (curLat + .5)) && (restaurant.Lng > (curLng - .5) && restaurant.Lng < (curLng + .5))) {
+                    
+                    // Build dictionary to insert into the HTML table
+                    tableDict ["rank"] = restaurant.Rank;
+                    tableDict ["restaurant"] = restaurant.Restaurant;
+                    tableDict ["city"] = restaurant.City;
+                    tableDict ["state"] = restaurant.State;
+                    tableDict ["avg_check"] = "$" + restaurant.Average_Check;
 
-            // Latitude +/- .5 = ~69 miles, Longitude +/- .5 = ~55 miles
-            if ((restaurant.Lat > (curLat - .5) && restaurant.Lat < (curLat + .5)) && (restaurant.Lng > (curLng - .5) && restaurant.Lng < (curLng + .5))) {
-                
-                tableDict ["rank"] = restaurant.Rank;
-                tableDict ["restaurant"] = restaurant.Restaurant;
-                tableDict ["city"] = restaurant.City;
-                tableDict ["state"] = restaurant.State;
-                tableDict ["avg_check"] = "$" + restaurant.Average_Check;
-
-                var row = tbody.append("tr");
-                Object.entries(tableDict).forEach(([key, value]) => {
-                var cell = row.append("td");
-                cell.text(value);
-                });
+                    // Insert rows into table when found
+                    var row = tbody.append("tr");
+                    Object.entries(tableDict).forEach(([key, value]) => {
+                    var cell = row.append("td");
+                    cell.text(value);
+                    });
+                };
             };
-        }
-    }   
+        };   
+
+        // Added check for if no restaurants found, display message for user
+        if (Object.keys(tableDict).length === 0){
+            var row = tbody.append("tr");
+            var cell = row.append("td");
+            cell.text("NO RESTAURANTS WITHIN 70 MILES");    
+        };
+    
   });
 };
 
