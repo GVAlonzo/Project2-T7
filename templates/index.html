@@ -215,7 +215,7 @@ document.body.removeChild(aux);
       <div class="col-md-6">
       <p>Click the button to get your coordinates and find the closest Top 100 Restaurant</p>
 
-    <button onclick="getLocation()">Get Location</button>
+    <button id="filter-btn" onclick="getLocation()">Get Location</button>
 
       <p id="demo"></p>
       <p>The closest location to you is:</p>
@@ -239,8 +239,23 @@ document.body.removeChild(aux);
       }
       </script>
 
+    <!-- Restaurant table -->
 
-
+    <div class="col-md-10">
+      <div id="table-area" class="">
+        <table id="rest-table" class="table table-striped">
+          <thead>
+            <tr>
+              <th class="table-head">RANK</th>
+              <th class="table-head">RESTAURANT</th>
+              <th class="table-head">CITY</th>
+              <th class="table-head">STATE</th>
+              <th class="table-head">AVERAGE MEAL</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
 
 
     </div>
@@ -276,7 +291,9 @@ document.body.removeChild(aux);
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
   <script src="/static/js/plot.js"></script>
 
-
+  <!-- required for nearest logic -->
+  <script src="/static/js/nearest.js"></script>
+  
 
 </body>
 
