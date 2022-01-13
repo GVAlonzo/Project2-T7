@@ -24,6 +24,8 @@ button.on("click", runEnter);
 // Complete the event handler function for the form
 function runEnter() {
 
+    tbody.html("");
+
     var curLat;
     var curLng;
 
