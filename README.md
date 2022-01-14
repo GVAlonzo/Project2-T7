@@ -56,4 +56,4 @@ Repository for Project 2 - Team 7
 2. The Mongo database collection is created and connection to the database is made and populated with the data from `restaurant_data.csv`. 
 3. The Mongo database returns the jsonified data when called by the functions for the routes listed above for use by the various javascript functions found in the `static/js/` folder.
 4. When using the Flask server, `index.html` and images must reside in the `/templates` folder within main directory. 
-5. 
+
